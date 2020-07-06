@@ -9,16 +9,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-    private int uid;
     private String username;
     private String password;
 
-    public int getUid() {
-        return uid;
-    }
-
-    public void setUid(int uid) {
-        this.uid = uid;
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     public String getUsername() {
@@ -37,12 +36,4 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "uid=" + uid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }

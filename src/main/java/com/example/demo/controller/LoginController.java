@@ -18,7 +18,7 @@ public class LoginController {
     @RequestMapping("/index")
     public String toIndex(Model model){
         model.addAttribute("msg", "hello,Shiro");
-        System.out.println("我被执行了");
+        System.out.println("index>=我被执行了");
         return "index";
     }
 
@@ -41,7 +41,7 @@ public class LoginController {
 
     @RequestMapping("/login")
     public String login(String username,String password,Model model){
-        System.out.println("我被执行了");
+        System.out.println("login>=我被执行了");
         //获取当前用户
         Subject subject = SecurityUtils.getSubject();
         System.out.println("-------");

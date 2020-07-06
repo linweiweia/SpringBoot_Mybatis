@@ -16,13 +16,14 @@ public class ShiroConfig {
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
         //设置安全管理器
         factoryBean.setSecurityManager(defaultWebSecurityManager);
-        //添加shiro内置过滤器
+        //添加shiro内置过滤器  authc表示必须认证才可以访问
         Map<String, String> filterMap = new LinkedHashMap<>();
         filterMap.put("/cfg/add", "authc");
         filterMap.put("/cfg/update", "authc");
+//        filterMap.put("/cfg/*", "authc");
         factoryBean.setFilterChainDefinitionMap(filterMap);
-        factoryBean.setLoginUrl("/cfg/toLogin");
         System.out.println("111111");
+        factoryBean.setLoginUrl("/cfg/toLogin");
         return factoryBean;
     }
 
